@@ -2,10 +2,6 @@
 android_app {
     name: "Oslo",
 
-    overrides: [
-        "OsloFeedback",
-    ],
-
     srcs: [
         "src/**/*.java",
         "src/**/I*.aidl",
