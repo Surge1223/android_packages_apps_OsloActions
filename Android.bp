@@ -1,6 +1,6 @@
 // Only used for Pixel devices
 android_app {
-    name: "Oslo",
+    name: "OsloActions",
 
     srcs: [
         "src/**/*.java",
