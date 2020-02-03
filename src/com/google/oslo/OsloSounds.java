@@ -5,7 +5,7 @@ import android.media.AudioAttributes;
 import android.media.AudioManager;
 import android.media.SoundPool;
 import android.util.Log;
-import com.google.oslo.R;
+import com.google.oslo.actions.R;
 import android.view.accessibility.AccessibilityManager;
 
 public class OsloSounds implements AccessibilityManager.AccessibilityStateChangeListener {

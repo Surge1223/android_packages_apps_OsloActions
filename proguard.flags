@@ -2,3 +2,4 @@
 -keep class com.google.android.**
 -keep class android.frameworks.stats.**
 -keep class com.google.oslo.**
+-keep class com.android.systemui.**

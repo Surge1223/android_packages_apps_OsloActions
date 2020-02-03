@@ -20,7 +20,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:androidprv="http://schemas.android.com/apk/prv/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.google.oslo"
+    package="com.google.oslo.actions"
     coreApp="true">
     
     <permission android:name="com.google.restricted_assist_gesture.permission.RESTRICTED_ASSIST_GESTURE_PROVIDER" android:protectionLevel="signature|privileged"/>
@@ -50,7 +50,8 @@
         android:usesNonSdkApi="true">
         
         <service
-            android:name="com.google.oslo.OsloOverlay">
+            android:name="com.google.oslo.OsloOverlay"
+            android:label="@string/app_name">
             <intent-filter>
                 <action android:name="com.android.systemui.action.PLUGIN_OVERLAY"/>
             </intent-filter>
@@ -58,7 +59,7 @@
         
         <service
             android:name="com.google.oslo.OsloSensorManager"
-            android:enabled="true">
+            android:label="OsloSensorManager">
             <intent-filter>
                 <action android:name="com.android.systemui.action.PLUGIN_SENSOR_MANAGER"/>
             </intent-filter>

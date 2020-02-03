@@ -20,7 +20,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.Objects;
 
-@Requires(target = SensorManagerPlugin.class, version = 1)
+@Requires(target = SensorManagerPlugin.class, version = SensorManagerPlugin.VERSION)
 public class OsloSensorManager implements SensorManagerPlugin {
     private static final String TAG = "OsloSensorManager";
     public static final boolean DEBUG = Log.isLoggable(TAG, Log.DEBUG);
@@ -193,7 +193,7 @@ public class OsloSensorManager implements SensorManagerPlugin {
 
     @Override
     public int getVersion() {
-        return 1;
+        return SensorManagerPlugin.VERSION;
     }
 
     public void onCreate(Context sysuiContext, Context pluginContext) {

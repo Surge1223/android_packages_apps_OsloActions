@@ -12,7 +12,7 @@ import com.android.internal.annotations.VisibleForTesting;
 import com.android.systemui.plugins.DarkIconDispatcher;
 import com.android.systemui.plugins.statusbar.StatusBarStateController;
 import com.google.oslo.OsloOverlay;
-import com.google.oslo.R;
+import com.google.oslo.actions.R;
 
 abstract class OsloView extends View implements DarkIconDispatcher.DarkReceiver, StatusBarStateController.StateListener {
     public static final int FULLSCREEN_USER_SWITCHER = 3;

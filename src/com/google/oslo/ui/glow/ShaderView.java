@@ -7,7 +7,7 @@ import android.graphics.PorterDuffXfermode;
 import android.opengl.GLSurfaceView;
 import android.view.SurfaceHolder;
 import android.view.ViewGroup;
-import com.google.oslo.R;
+import com.google.oslo.actions.R;
 
 public class ShaderView extends GLSurfaceView {
     private  ShaderGlow mGlow = null;

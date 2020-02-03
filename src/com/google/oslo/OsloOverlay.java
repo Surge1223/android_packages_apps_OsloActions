@@ -14,10 +14,13 @@ import android.view.InputChannel;
 import android.view.InputEvent;
 import android.view.InputEventReceiver;
 import android.view.InputMonitor;
+import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
+import android.view.ViewTreeObserver.InternalInsetsInfo;
+import android.view.ViewTreeObserver.OnComputeInternalInsetsListener;
 
 import com.android.internal.annotations.VisibleForTesting;
 import com.android.systemui.plugins.DarkIconDispatcher;
@@ -39,14 +42,16 @@ import com.google.oslo.ui.OsloOnboarding;
 import com.google.oslo.ui.glow.GlowFeedbackView;
 import com.google.oslo.ui.glow.ShaderView;
 import com.google.oslo.ui.glow.animations.AnimationTimes;
-import com.google.oslo.R;
+import com.google.oslo.actions.R;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Objects;
 
-@Requirements({@Requires(target = OverlayPlugin.class, version = 4), @Requires(target = DarkIconDispatcher.DarkReceiver.class, version = 1), @Requires(target = DarkIconDispatcher.class, version = 1), @Requires(target = StatusBarStateController.StateListener.class, version = 1), @Requires(target = StatusBarStateController.class, version = 1)})
+@Requires(target = OverlayPlugin.class, version = OverlayPlugin.VERSION)
+@Requires(target = DarkIconDispatcher.class, version = DarkIconDispatcher.VERSION)
+@Requires(target = StatusBarStateController.class, version = StatusBarStateController.VERSION)
 public class OsloOverlay implements OverlayPlugin {
     public static final boolean DEBUG = SystemProperties.getBoolean("persist.sysui.oslofeedback", false);
     private static final boolean ENABLE_OSLOFEEDBACK_VIA_ADB = DEBUG;
@@ -120,6 +125,10 @@ public class OsloOverlay implements OverlayPlugin {
     public boolean mUseGlow = true;
     private boolean IS_DEBUGGABLE = true;
     protected WindowManager mWindowManager;
+    private View mStatusBarView;
+    private View mNavBarView;
+    private float mStatusBarHeight;
+    private boolean mInputSetup;
 
     public class Minimizer {
         private final int mDisplayId;
@@ -585,8 +594,24 @@ public class OsloOverlay implements OverlayPlugin {
         mMainThreadHandler = new Handler(Looper.getMainLooper());
     }
 
+    @Override
     public void setup(View statusBar, View navBar) {
+        Log.d(TAG, "Setup");
+        int id = mPluginContext.getResources().getIdentifier("status_bar_height", "dimen",
+                "android");
+        mStatusBarHeight = mPluginContext.getResources().getDimension(id);
+        if (statusBar instanceof ViewGroup) {
+            mStatusBarView = LayoutInflater.from(mPluginContext)
+                    .inflate(R.layout.oslo_onboarding_tooltip, (ViewGroup) statusBar, false);
+            ((ViewGroup) statusBar).addView(mStatusBarView);
+        }
+        if (navBar instanceof ViewGroup) {
+            mNavBarView = LayoutInflater.from(mPluginContext)
+                    .inflate(R.layout.oslo_onboarding_tooltip, (ViewGroup) navBar, false);
+            ((ViewGroup) navBar).addView(mNavBarView);
+        }
     }
+
 
     public void setup(View statusBar, View navBar, OverlayPlugin.Callback callback, DozeParameters dozeParams) {
         if (DEBUG) {
@@ -596,7 +621,7 @@ public class OsloOverlay implements OverlayPlugin {
         mDozeParams = dozeParams;
         mStatusBarCallback = callback;
         mMinimizer = new Minimizer(mSysuiContext);
-//        addViews();
+        addViews();
         enableOsloFeedbackViaAdb();
         mOsloServiceManager = new OsloServiceManager(mPluginContext, new Runnable() {
             public final void run() {

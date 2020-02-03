@@ -17,7 +17,7 @@ import java.nio.FloatBuffer;
 import android.graphics.Point;
 import android.content.Context;
 import java.nio.ShortBuffer;
-import com.google.oslo.R;
+import com.google.oslo.actions.R;
 import com.google.oslo.ui.glow.attributes.LineAttributes;
 import com.google.oslo.ui.glow.attributes.GlowAttributes;
 import com.google.oslo.ui.glow.attributes.DeviceAttributes;

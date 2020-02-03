@@ -9,7 +9,7 @@ import android.graphics.Point;
 import android.graphics.PointF;
 import android.view.animation.AccelerateDecelerateInterpolator;
 import android.view.animation.Interpolator;
-import com.google.oslo.R;
+import com.google.oslo.actions.R;
 import com.google.oslo.ui.glow.ShaderGlow;
 import com.google.oslo.ui.glow.animations.AnimatedAttributes;
 import com.google.oslo.ui.glow.animations.AnimationInterpolators;

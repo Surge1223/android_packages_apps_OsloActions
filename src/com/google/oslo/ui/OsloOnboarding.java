@@ -32,7 +32,7 @@ import com.android.systemui.plugins.statusbar.StatusBarStateController;
 import com.google.oslo.Assert;
 import com.google.oslo.OsloOverlay;
 import com.google.oslo.Prefs;
-import com.google.oslo.R;
+import com.google.oslo.actions.R;
 import com.google.oslo.service.serviceinterface.OsloStrings;
 import java.util.ArrayList;
 import java.util.List;

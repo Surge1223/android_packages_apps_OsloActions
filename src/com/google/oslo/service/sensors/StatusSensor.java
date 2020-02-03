@@ -23,7 +23,7 @@ import android.os.RemoteException;
 import android.os.SystemProperties;
 import android.text.TextUtils;
 import android.util.Log;
-import com.google.oslo.R;
+import com.google.oslo.actions.R;
 import com.google.oslo.service.OsloMetrics;
 import com.google.oslo.service.OsloService;
 import com.google.oslo.service.actions.AudioUtils;
