@@ -1,0 +1,4 @@
+-keep class com.android.hidl.base.V1_0.IBase
+-keep class com.google.android.**
+-keep class android.frameworks.stats.**
+-keep class com.google.oslo.**

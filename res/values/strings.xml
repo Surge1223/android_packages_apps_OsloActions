@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="air_swipe_alarm">Swipe above phone to snooze alarm</string>
+    <string name="air_swipe_calls">Swipe above phone to silence call</string>
+    <string name="air_swipe_media">Swipe above phone to skip songs</string>
+    <string name="air_swipe_timer">Swipe above phone to dismiss timer</string>
+    <string name="app_name">Motion Sense</string>
+    <string name="aware_settings_disabled_info_dialog_description">Motion Sense features are not supported in this country</string>
+    <string name="aware_settings_enabled_info_dialog_description">Motion Sense features are supported in this country</string>
+</resources>

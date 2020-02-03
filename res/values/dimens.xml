@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="default_feedback_burn_in_prevention_offset">5px</dimen>
+    <dimen name="glow_asleep_pulsate_amp">0.1667</dimen>
+    <dimen name="glow_blur_intensity">14dp</dimen>
+    <dimen name="glow_drawing_height">60dp</dimen>
+    <dimen name="glow_gradient_stop_1">0.2268</dimen>
+    <dimen name="glow_gradient_stop_2">0.4689</dimen>
+    <dimen name="glow_gradient_stop_3">0.9575</dimen>
+    <dimen name="glow_height">120dp</dimen>
+    <dimen name="glow_position_x_partial_flick">60dp</dimen>
+    <dimen name="glow_position_y_active">24dp</dimen>
+    <dimen name="glow_position_y_away">62dp</dimen>
+    <dimen name="glow_position_y_engaged">35dp</dimen>
+    <dimen name="glow_position_y_flick">10dp</dimen>
+    <dimen name="glow_scale_inactive">1.7</dimen>
+    <dimen name="glow_width">360dp</dimen>
+    <dimen name="line_mask_fade_end">63.92dp</dimen>
+    <dimen name="line_mask_fade_start">10.8dp</dimen>
+    <dimen name="line_thickness">2dp</dimen>
+</resources>

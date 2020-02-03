@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="glow_dark_asleep_color_1">#ab000000</color>
+    <color name="glow_dark_asleep_color_2">#ab000000</color>
+    <color name="glow_dark_asleep_color_3">#00000000</color>
+    <color name="glow_dark_color_1">#6492ca</color>
+    <color name="glow_dark_color_2">#cc1d64c2</color>
+    <color name="glow_dark_color_3">#00081a33</color>
+    <color name="glow_dark_color_3_og">#001d64c2</color>
+    <color name="glow_dark_line_color">#006eff</color>
+    <color name="glow_light_asleep_color_1">#ffffff</color>
+    <color name="glow_light_asleep_color_2">#80ffffff</color>
+    <color name="glow_light_asleep_color_3">#00000000</color>
+    <color name="glow_light_color_1">#b0c6db</color>
+    <color name="glow_light_color_2">#cc8ab4f8</color>
+    <color name="glow_light_color_3">#00232e3f</color>
+    <color name="glow_light_color_3_light_dark">#002d3b51</color>
+    <color name="glow_light_color_3_og">#008ab4f8</color>
+    <color name="glow_light_line_color">#80b1ff</color>
+</resources>

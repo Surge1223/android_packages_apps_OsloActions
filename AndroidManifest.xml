@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+ /*
+ * Copyright (c) 2014 Google Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+ -->
+<manifest
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:androidprv="http://schemas.android.com/apk/prv/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.google.oslo"
+    coreApp="true">
+    
+    <permission android:name="com.google.restricted_assist_gesture.permission.RESTRICTED_ASSIST_GESTURE_PROVIDER" android:protectionLevel="signature|privileged"/>
+    <uses-permission android:name="com.google.restricted_assist_gesture.permission.RESTRICTED_ASSIST_GESTURE_PROVIDER"/>
+    <uses-permission android:name="android.permission.INTERACT_ACROSS_USERS_FULL"/>
+    <uses-permission android:name="android.permission.LOCATION_HARDWARE"/>
+    <uses-permission android:name="android.permission.MANAGE_SOUND_TRIGGER"/>
+    <uses-permission android:name="android.permission.MANAGE_USERS"/>
+    <uses-permission android:name="android.permission.MEDIA_CONTENT_CONTROL"/>
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_ROUTING"/>
+    <uses-permission android:name="android.permission.MODIFY_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+    <uses-permission android:name="android.permission.START_ACTIVITIES_FROM_BACKGROUND"/>
+    <uses-permission android:name="android.permission.WRITE_SECURE_SETTINGS"/>
+    <uses-permission android:name="android.permission.STATUS_BAR_SERVICE"/>
+    <uses-permission android:name="android.permission.USER_ACTIVITY"/>
+    <uses-permission android:name="com.android.systemui.permission.PLUGIN"/>
+    <uses-permission android:name="com.google.android.deskclock.permission.RECEIVE_ALERT_BROADCASTS"/>
+    <uses-permission android:name="com.google.android.dialer.permission.RECEIVE_RING_STATE"/>
+
+    <application
+        android:label="@string/app_name"
+        android:icon="@drawable/motion_sense"
+        android:allowBackup="true"
+        android:extractNativeLibs="true"
+        android:directBootAware="true"
+        android:usesNonSdkApi="true">
+        
+        <service
+            android:name="com.google.oslo.OsloOverlay">
+            <intent-filter>
+                <action android:name="com.android.systemui.action.PLUGIN_OVERLAY"/>
+            </intent-filter>
+        </service>
+        
+        <service
+            android:name="com.google.oslo.OsloSensorManager"
+            android:enabled="true">
+            <intent-filter>
+                <action android:name="com.android.systemui.action.PLUGIN_SENSOR_MANAGER"/>
+            </intent-filter>
+        </service>
+        
+        <service
+        android:name="com.google.oslo.service.OsloService"
+        android:exported="true"
+        android:directBootAware="true"/>
+        
+    </application>
+    
+</manifest>
