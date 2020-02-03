@@ -33,5 +33,13 @@ android_app {
 
 
     dxflags: ["--multi-dex"],
+    required: ["privapp_whitelist_com.google.oslo.actions"],
+}
 
+prebuilt_etc {
+    name: "privapp_whitelist_com.google.oslo.actions",
+    product_specific: true,
+    sub_dir: "permissions",
+    src: "com.google.oslo.actions.xml",
+    filename_from_src: true,
 }
