@@ -51,7 +51,8 @@
         
         <service
             android:name="com.google.oslo.OsloOverlay"
-            android:label="@string/app_name">
+            android:label="@string/app_name"
+            android:exported="true">
             <intent-filter>
                 <action android:name="com.android.systemui.action.PLUGIN_OVERLAY"/>
             </intent-filter>
@@ -59,7 +60,8 @@
         
         <service
             android:name="com.google.oslo.OsloSensorManager"
-            android:label="OsloSensorManager">
+            android:label="OsloSensorManager"
+            android:exported="true">
             <intent-filter>
                 <action android:name="com.android.systemui.action.PLUGIN_SENSOR_MANAGER"/>
             </intent-filter>

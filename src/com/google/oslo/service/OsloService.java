@@ -19,7 +19,7 @@ import com.google.oslo.service.serviceinterface.input.OsloPresenceConfig;
 public class OsloService extends Service {
     private static int REGISTER_LISTENER = 0;
     private static String RESTRICTED_ASSIST_GESTURE_PROVIDER = "com.google.restricted_assist_gesture.permission.RESTRICTED_ASSIST_GESTURE_PROVIDER";
-    private static String TAG = "Oslo/OsloService";
+    private static String TAG = "OsloActions/OsloService";
     private static int UNREGISTER_LISTENER = 1;
     private Stub mBinder = new Stub() {
         public void registerListener(IBinder token, IBinder listener, int type, Bundle config) {

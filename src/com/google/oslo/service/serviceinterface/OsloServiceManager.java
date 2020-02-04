@@ -27,8 +27,8 @@ public class OsloServiceManager {
     public static final int SWIPE = 7;
     public static final int SWIPE_ECHO = 8;
     private static final String SYSUI_CLASS = "com.google.oslo.service.OsloService";
-    private static final String SYSUI_PACKAGE = "com.google.oslo";
-    private static final String TAG = "Oslo/OsloServiceManager";
+    private static final String SYSUI_PACKAGE = "com.google.oslo.actions";
+    private static final String TAG = "OsloActions/OsloServiceManager";
     public static final int UNKNOWN = 0;
     private boolean mBoundToService;
     public Runnable mCallback;

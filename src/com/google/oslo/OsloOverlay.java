@@ -383,7 +383,7 @@ public class OsloOverlay implements OverlayPlugin {
                     }
 
                     public final void run() {
-//                        lambda$onStatusChanged$0$OsloOverlay$6( this.f$1 );
+                        lambda$onStatusChanged$0$OsloOverlay$6( this.f$1 );
                     }
                 } );
             }
@@ -667,7 +667,7 @@ public class OsloOverlay implements OverlayPlugin {
     public void onDestroy() {
         mMainThreadHandler.post(new Runnable() {
             public final void run() {
-//                lambda$onDestroy$2$OsloOverlay();
+                lambda$onDestroy$2$OsloOverlay();
             }
         });
     }
@@ -908,4 +908,5 @@ public class OsloOverlay implements OverlayPlugin {
         return (systemUiVisibility & 6150) != 0;
     }
 }
+
 
